@@ -7,7 +7,7 @@ import { connect } from "react-redux"
 const SmurfForm = (props) => {
     const[smurf, setSmurf] = useState({
         name: "",
-        age: Number(""),
+        age: 0,
         height: ""
     })
   
@@ -23,8 +23,9 @@ const SmurfForm = (props) => {
     const handleSubmit = e => {
         e.preventDefault()
         const newSmurf = {
-            ...smurf
+            ...smurf,
         }
+        console.log(newSmurf)
         props.addSmurf(newSmurf)
     }
 
@@ -40,8 +41,8 @@ const SmurfForm = (props) => {
             />
             <label>Age:&nbsp;</label>
             <input
-            type="text"
-            name="value"
+            type="integer"
+            name="age"
             onChange={handleChanges}
             />
             <label>Height:&nbsp;</label>

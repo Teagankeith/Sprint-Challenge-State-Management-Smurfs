@@ -26,7 +26,7 @@ export const addSmurf = (newSmurf) => dispatch => {
     .post ("http://localhost:3333/smurfs", newSmurf)
     .then(res => {
         console.log(res)
-        dispatch({type: ADD_SMURF, payload:res})
+        dispatch({type: ADD_SMURF, payload: res.data})
     })
     .catch(err => {
         console.log("An error happene", err)
